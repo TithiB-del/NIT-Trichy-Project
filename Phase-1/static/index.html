@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stock Market Dynamics using CA</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <script defer src="model.js"></script>
+    <script defer src="index.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <h1><u>Analysing Stock Market Dynamics using Cellular Automata</u></h1>
+    </div>
+
+    <div class="container">
+        <div class="rules">
+
+            <h3>Meaning of Symbols:</h3>
+            <ul>
+                <li>
+                    <b>P_D</b> : Probability of an Active Trader <b>(+1)</b> Becoming Inactive <b>(0)</b> under the given Neighbourhood Conditions
+                </li>
+    
+                <li>
+                    <b>P_H</b> :  Probability of an Inactive <b>(0)</b> Trader Becoming Active <b>(+1 or -1)</b> under the given Neighbourhood Conditions
+                </li>
+    
+                <li>
+                    <b>P_C</b> : Probability of an Inactive <b>(0)</b> Trader Becoming Active <b>(+1 or -1)</b> Irrespective of its Neighbourhood Conditions
+                </li>
+    
+                
+            </ul>    
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="color">
+             <h3>Meaning of Colors in the Simulation:</h3>
+            <ul>
+                <li style="margin-bottom: 0.5vh;"><div class="sample" style="background-color:#161616"></div> is <b>0</b> State </li>
+                <li  style="margin-bottom: 0.5vh;"><div class="sample" style="background-color:#efabbb"></div> is <b>-1</b> State </li>
+                <li  style="margin-bottom: 0.5vh;"><div class="sample" style="background-color:#cefdcb"></div> is <b>+1</b> State </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="control-panel">
+
+        <form class = 'ip_controls'>
+            <label for="P_H">Value of P_H:</label>
+            <input type="text" name="P_H" id="p_h">
+
+            <label for="P_D">Value of P_D:</label>
+            <input type="text" name="P_D" id="p_d">
+
+            <label for="P_C">Value of P_C:</label>
+            <input type="text" name="P_C" id = 'p_c'>
+
+            <br>
+            
+            <label for="RowCnt">Number of Rows:</label>
+            <input type="text" name="RowCnt" id = 'row'>
+
+            <br>
+            
+            <label for="ColCnt">Number of Columns:</label>
+            <input type="text" name="ColCnt" id = 'col'>
+
+            <br>
+
+            <button type="submit">Simulate</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <canvas class="simulation-field">
+
+        </canvas>
+    </div>
+</html>
